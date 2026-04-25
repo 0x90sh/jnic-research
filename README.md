@@ -2,13 +2,15 @@
 
 JNIC is a Java protector. It strips your method bodies into native code and ships six platform binaries packed inside the jar. This is the toolkit that unwinds it.
 
+This repository is **research tooling** for understanding and partially unwinding that process. It is a **proof of concept**, not a complete deprotector, not production-grade software, and not a fully fleshed-out reverse-engineering framework.
+
 Point it at a JNIC jar and it gives you back:
 
-* the original jar with the JNIC scaffolding gone
-* the six native binaries as real `.so`, `.dylib`, `.dll` files
-* a per method JSON dump of the recovered JNI call trace
-* every string JNIC bundled, including the ones it XOR encrypts at load
-* lifted JVM bytecode for the methods whose call trace is simple enough to map back
+* the original jar with JNIC scaffolding removed where possible
+* embedded native binaries as real `.so`, `.dylib`, and `.dll` files
+* per-method JSON dumps of recovered JNI call traces
+* bundled strings, including strings XOR-encrypted by JNIC at load time
+* lifted JVM bytecode for methods whose native call trace is simple enough to map back safely
 
 Methods that are too tangled to lift safely stay as `native` shells. The report says which ones and why. Pass `--stub-unlifted` if you want the jar to load anyway.
 
