@@ -29,9 +29,9 @@ Run with no arguments for an interactive menu.
 ```
 jnic-unpack info <jar>                     summary of what's inside
 jnic-unpack carve <jar> -d <dir>           extract the per platform native binaries
-jnic-unpack strings <jar>                  every recovered string per class
+jnic-unpack strings <jar>                  recovered strings per class
 jnic-unpack trace <jar> [--class X]        JNI call trace per method
-jnic-unpack unpack <jar> -o <out>          full deobfuscation
+jnic-unpack unpack <jar> -o <out>          full deobfuscation (poc implementation)
 jnic-unpack unpack <jar> -o <out> --stub-unlifted   stub the unlifted methods
 ```
 
