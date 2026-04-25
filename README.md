@@ -82,4 +82,6 @@ samples/               HelloWorld and SnakeGame
 
 JNIC is commercial software. This toolkit exists for malware analysis, incident response, and security research, which are protected research activities. Don't run it against jars you aren't authorized to analyze.
 
+JNIC has also appeared in public malware-analysis work. In the documented [Weedhack analysis](https://github.com/pog5/weedhack-analysis), the Java layer was reduced largely to native method declarations while the real behavior was moved into embedded native libraries. This project is partly motivated by that defensive need: safely extracting and understanding JNIC-protected artifacts without executing suspicious samples.
+
 MIT license, see [`LICENSE`](LICENSE).
