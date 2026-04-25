@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jnic-unpack"
+version = "0.1.0"
+description = "Reverse-engineering toolkit for jars protected by JNIC. Strip the bootstrap, carve out per-platform native binaries, and lift simple JNI patterns back to JVM bytecode."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+  "capstone>=5.0",
+]
+
+[project.scripts]
+jnic-unpack = "jnic_unpack.__main__:main"
+
+[tool.setuptools]
+packages = ["jnic_unpack"]
