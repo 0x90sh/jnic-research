@@ -4,6 +4,8 @@ JNIC is a Java protector. It strips your method bodies into native code and ship
 
 This repository is **research tooling** for understanding and partially unwinding that process. It is a **proof of concept**, not a complete deprotector, not production-grade software, and not a fully fleshed-out reverse-engineering framework.
 
+The public samples analyzed in this repository do not support the strongest interpretation of JNIC's marketing claims. JNIC removes protected method bytecode from the class file, but the underlying program logic remains recoverable through native/JNI analysis. This distinction matters because protection against Java bytecode decompilers is not the same as complete protection against reverse engineering.
+
 Point it at a JNIC jar and it gives you back:
 
 * the original jar with JNIC scaffolding removed where possible
